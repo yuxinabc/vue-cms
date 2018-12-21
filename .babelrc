@@ -1,4 +1,11 @@
 {
-  "presets":["@babel/preset-env"],
-  "plugins": ["@babel/plugin-transform-runtime","@babel/plugin-proposal-class-properties"]
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-class-properties",
+    ["component", {"libraryName": "mint-ui", "style": true}]
+  ],
+  "ignore":["./src/libs/mui/js/mui.min.js"]
 }
