@@ -50,9 +50,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
-</style>
-<style lang="less">
     .v-enter{
         opacity: 0;
         transform: translateX(100%);
@@ -60,11 +57,13 @@ export default {
     .v-leave-to{
         opacity: 0;
         transform: translateX(-100%);
-     }
+    }
     .v-enter-active,.v-leave-active{
         transition: all .5s ease;
         position: absolute;
     }
+</style>
+<style lang="less">
     .app-container{
         width: 100%;
         padding-top: 44px;

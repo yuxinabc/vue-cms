@@ -9,7 +9,7 @@
         <button type="button" class="mui-btn mui-btn-primary mui-btn-block my-submit-button" @click="doComment">发表评论
         </button>
         <div class="comments">
-            <div class="comment-title" v-for="(item,index) in commentList" :key="item.add_time">
+            <div class="comment-title" v-for="(item,index) in commentList" :key="index">
                 <p>第{{index+1}}楼&nbsp;&nbsp;用户：{{item.user_name}}&nbsp;&nbsp;发表时间：{{item.add_time|timeFormat}}</p>
                 <p>{{item.content==='undefined'?'此用户很懒，没有留下评论':item.content}}</p>
             </div>
@@ -37,9 +37,6 @@
                 this.axios.get(`/getcomments/${this.id}`, {
                     params: {pageindex: this.currentPage}
                 }).then(response => {
-                    /* for (let i = 0; i < response.data.message.length; i++) {
-                         this.commentList.push(response.data.message[i])
-                     }*/
                     this.isMore = response.data.message.length > 0
                     this.commentList = this.commentList.concat(response.data.message)
                 }).catch(error => {
@@ -51,10 +48,16 @@
                 this.getCommentList()
             },
             doComment() {
+               /* const params = new URLSearchParams()
+                params.append('content', this.comment)*/
                 this.axios.post(`/postcomment/${this.id}`, {
-                    content: this.comment
+                    content:this.comment
                 }).then(response => {
-                    console.log(response)
+                    //先初始化
+                    this.currentPage = 1
+                    this.commentList.splice(0, this.commentList.length)
+                    //在更新数据
+                    this.getCommentList()
                 }).catch(error => {
 
                 })
