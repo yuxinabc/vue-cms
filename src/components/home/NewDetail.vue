@@ -1,11 +1,6 @@
 <template>
-    <div class="new-detail">
-       <h3 class="title">{{newInfo.title}}</h3>
-        <p class="subtitle">
-            <span>发表时间:{{newInfo.add_time|timeFormat}}</span>
-            <span>点击:{{newInfo.click}}次</span>
-        </p>
-        <hr />
+    <div>
+        <title-time-click :info="newInfo"></title-time-click>
         <div class="content" v-html="newInfo.content">
         </div>
         <comment-box :id="$route.params.id"></comment-box>
@@ -14,9 +9,11 @@
 
 <script>
     import comment from '../subcomponents/Comment.vue'
+    import TitleForTimeClick from '../subcomponents/TitleForTimeClick.vue'
     export default {
         components:{
             'comment-box':comment,
+            'title-time-click':TitleForTimeClick,
         },
         data() {
             return {
@@ -43,25 +40,5 @@
 </script>
 
 <style lang="less" scoped>
-.new-detail{
-    padding: 4px;
-    .title{
-        margin: 15px 0;
-        font-size: 15px;
-        color: red;
-        text-align: center;
-    }
-    .subtitle{
-        display: flex;
-        justify-content: space-between;
-        span{
-           color: #0069d9;
-            font-size: 13px;
-        }
-    }
-    .content{
 
-    }
-
-}
 </style>

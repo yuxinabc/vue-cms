@@ -72,6 +72,11 @@ export default {
         .mui-bar-nav{
             height: 44px;
             line-height: 44px;
+            background: #0D8EF6;
+            color: white;
+            .mui-title{
+                color: white;
+            }
         }
     }
 </style>

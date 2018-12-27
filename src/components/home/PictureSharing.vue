@@ -11,14 +11,17 @@
                 </div>
             </div>
             <ul class="img-container">
-                <li v-for="item in imgList" :key="item.id">
+                <router-link tag="li" v-for="item in imgList" :key="item.id" :to="'/home/pictureSharing/pictureDetail/'+item.id">
                     <img v-lazy="item.img_url">
                     <div class="description">
                         <h3>{{item.title}}</h3>
-                        <p>{{item.zhaiyao}}</p>
+                        <p class="mui-ellipsis-2" style="-webkit-line-clamp:3">{{item.zhaiyao}}</p>
                     </div>
-                </li>
+                </router-link>
             </ul>
+            <div class="no-data" v-if="imgList.length===0">
+                <p>暂无数据</p>
+            </div>
         </div>
     </div>
 </template>
@@ -89,15 +92,16 @@
             li {
                 position: relative;
                 margin-bottom: 15px;
+                background: #ccc;
                 img {
-                    box-shadow: 0 0 10px #ccc;
+                    box-shadow: 0 0 9px #c0c0c0;
                     width: 100%;
                     vertical-align: middle;
                 }
                 .description {
                     position: absolute;
                     bottom: 0;
-                    max-height: 80px;
+                    overflow: hidden;
                     background-color: rgba(0, 0, 0, .5);
                     h3 {
                         font-size: 13px;
@@ -106,8 +110,17 @@
                     p {
                         font-size: 11px;
                         color: white;
+                        margin: 0;
+                        padding: 3px;
                     }
                 }
+            }
+        }
+        .no-data{
+            p{
+                color: #c0c0c0;
+                text-align: center;
+                margin-top: 30px;
             }
         }
     }
