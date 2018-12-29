@@ -14,6 +14,13 @@ import './http/http.js'
 import moment from 'moment'
 //配置懒加载
 import VueLazyload from 'vue-lazyload'
+
+/*//导入element-ui开始
+import 'element-ui/lib/theme-chalk/index.css'
+import ElementUI from 'element-ui'
+Vue.use(ElementUI);
+//导入element-ui结束*/
+
 // or with options
 Vue.use(VueLazyload, {
     preLoad: 1.3,
@@ -31,6 +38,14 @@ Vue.use(VuePreview,{
 Vue.filter('timeFormat', function (time, pattern) {
     return moment(time).format(pattern || 'YYYY-MM-DD HH:mm:ss')
 })
+Vue.prototype.moneyFormat= (money,pattern)=> {
+    if(pattern==='$'){
+        return '$'+money
+    }else{
+        return '&yen'+money
+    }
+
+}
 Vue.prototype.picList = [
     'https://goss.veer.com/creative/vcg/veer/800water/veer-135261461.jpg', 'https://goss1.veer.com/creative/vcg/veer/612/veer-170524814.jpg',
     'https://goss2.veer.com/creative/vcg/veer/612/veer-170649743.jpg', 'https://goss3.veer.com/creative/vcg/veer/612/veer-134758095.jpg',
@@ -55,6 +70,15 @@ Vue.prototype.picThumbnailList=[
     'http://img0.imgtn.bdimg.com/it/u=2900232183,3944425525&fm=15&gp=0.jpg','http://img2.imgtn.bdimg.com/it/u=3547553144,2651227318&fm=15&gp=0.jpg',
     'http://img0.imgtn.bdimg.com/it/u=3351350563,651554009&fm=15&gp=0.jpg','http://img4.imgtn.bdimg.com/it/u=642625747,4100644561&fm=15&gp=0.jpg',
     'http://img0.imgtn.bdimg.com/it/u=1915563320,1495307080&fm=15&gp=0.jpg','http://img0.imgtn.bdimg.com/it/u=412430176,990584846&fm=15&gp=0.jpg']
+Vue.prototype.phoneList=[
+    'https://img13.360buyimg.com/n7/jfs/t10675/253/1344769770/66891/92d54ca4/59df2e7fN86c99a27.jpg','https://img12.360buyimg.com/n7/jfs/t21415/332/642302956/189613/778f2021/5b13cd6cN8e12d4aa.jpg',
+    'https://img12.360buyimg.com/n7/jfs/t21043/186/220467895/46630/3417464c/5b0517ccN295c6fdb.jpg','https://img10.360buyimg.com/n7/jfs/t20569/241/521943946/338336/409b289f/5b0fcb56N90ae22f0.jpg',
+    'https://img14.360buyimg.com/n7/jfs/t1/6425/40/3887/217009/5bd716e9E4886d5d8/b3da975f4047ded3.jpg', 'https://img14.360buyimg.com/n7/jfs/t13441/73/1250191369/239632/8b94bbc6/5a1d1e2dN6ba9aac4.jpg',
+    'https://img13.360buyimg.com/n7/jfs/t27112/273/1423275096/265013/d92b3181/5be3cb5bN334c8048.jpg', 'https://img10.360buyimg.com/n7/jfs/t18157/222/1822300674/231514/6c179af8/5ad87390N086a3c91.jpg',
+    'https://img14.360buyimg.com/n7/jfs/t18052/318/2334327001/256076/23da5f45/5af13917Naca6cb3d.jpg', 'https://img10.360buyimg.com/n7/jfs/t1/4612/28/6223/298257/5ba22d66Ef665222f/d97ed0b25cbe8c6e.jpg',
+    'https://img12.360buyimg.com/n7/jfs/t26257/277/1057746984/473535/e50fe16b/5bbf1b0dN865b6899.jpg', 'https://img11.360buyimg.com/n7/jfs/t24202/21/1240414017/266807/216c76b7/5b5705a1N6a12c28c.jpg',
+    'https://img14.360buyimg.com/n7/jfs/t27616/251/1425719819/224805/20c2401e/5bc831fdN61f8d9d2.jpg','https://img12.360buyimg.com/n7/jfs/t7582/66/3048380492/71753/acde79b5/59b85824N836bb714.jpg',
+    'https://img13.360buyimg.com/n7/jfs/t22921/120/2385170149/233112/2ade64f5/5b7d77ffN9b878622.jpg','https://img13.360buyimg.com/n7/jfs/t8284/363/1326459580/71585/6d3e8013/59b857f2N6ca75622.jpg']
 new Vue({
     el: '#app',
     router,

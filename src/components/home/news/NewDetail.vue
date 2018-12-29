@@ -8,8 +8,8 @@
 </template>
 
 <script>
-    import comment from '../subcomponents/Comment.vue'
-    import TitleForTimeClick from '../subcomponents/TitleForTimeClick.vue'
+    import comment from '../../subcomponents/Comment.vue'
+    import TitleForTimeClick from '../../subcomponents/TitleForTimeClick.vue'
     export default {
         components:{
             'comment-box':comment,

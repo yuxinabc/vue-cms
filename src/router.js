@@ -1,13 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from './components/home/Home.vue'
-import NewList from './components/home/NewList.vue'
-import PictureSharing from './components/home/PictureSharing.vue'
-import PictureDetail from './components/home/PictureDetail.vue'
-import NewDetail from './components/home/NewDetail.vue'
+import NewList from './components/home/news/NewList.vue'
+import PictureSharing from './components/home/picShare/PictureList.vue'
+import PictureDetail from './components/home/picShare/PictureDetail.vue'
+import NewDetail from './components/home/news/NewDetail.vue'
 import Member from './components/Member.vue'
 import ShoppingCart from './components/ShoppingCart.vue'
 import Search from './components/Search.vue'
+import CommodityList from './components/home/commodityPurchase/CommodityList.vue'
+import CommodityDetail from './components/home/commodityPurchase/CommodityDetail.vue'
+import GraphicIntroduction from './components/home/commodityPurchase/GraphicIntroduction.vue'
 Vue.use(VueRouter)
 let router=new VueRouter({
     routes:[
@@ -17,6 +20,9 @@ let router=new VueRouter({
         {path:'/home/newList/newDetail/:id',component:NewDetail,name:'新闻详情'},
         {path:'/home/pictureSharing',component:PictureSharing,name:'图片分享'},
         {path:'/home/pictureSharing/pictureDetail/:id',component:PictureDetail,name:'图片详情'},
+        {path:'/home/commodityPurchase',component:CommodityList,name:'商品列表'},
+        {path:'/home/commodityPurchase/commodityDetail/:id',component:CommodityDetail,name:'商品详情'},
+        {path:'/home/commodityPurchase/commodityDetail/graphicIntroduction/:id',component:GraphicIntroduction,name:'图文介绍'},
         {path:'/member',component:Member,name:'会员'},
         {path:'/shoppingCart',component:ShoppingCart,name:'购物车'},
         {path:'/search',component:Search,name:'搜索'},

@@ -94,7 +94,7 @@
                 margin-bottom: 15px;
                 background: #ccc;
                 img {
-                    box-shadow: 0 0 9px #c0c0c0;
+                    box-shadow: 0 0 9px #999;
                     width: 100%;
                     vertical-align: middle;
                 }

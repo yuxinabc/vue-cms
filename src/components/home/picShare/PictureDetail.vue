@@ -8,8 +8,8 @@
 </template>
 
 <script>
-    import TitleForTimeClick from '../subcomponents/TitleForTimeClick.vue'
-    import comment from '../subcomponents/Comment.vue'
+    import TitleForTimeClick from '../../subcomponents/TitleForTimeClick.vue'
+    import comment from '../../subcomponents/Comment.vue'
 
     export default {
         components: {
@@ -78,6 +78,9 @@
                 figure{
                     width: 33.33%;
                     margin: 0;
+                    img{
+                        box-shadow: 0 0 9px #999;
+                    }
                 }
             }
         }
