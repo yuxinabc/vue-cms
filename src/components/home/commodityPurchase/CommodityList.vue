@@ -53,7 +53,6 @@
                            response.data.message[i].img_url=this.phoneList[i]
                        }
                         this.commodityList=this.commodityList.concat(response.data.message)
-                        console.log(this.commodityList)
                     })
                     .catch(error=>{
                         if(pullToRefresh){

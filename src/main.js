@@ -14,13 +14,6 @@ import './http/http.js'
 import moment from 'moment'
 //配置懒加载
 import VueLazyload from 'vue-lazyload'
-
-/*//导入element-ui开始
-import 'element-ui/lib/theme-chalk/index.css'
-import ElementUI from 'element-ui'
-Vue.use(ElementUI);
-//导入element-ui结束*/
-
 // or with options
 Vue.use(VueLazyload, {
     preLoad: 1.3,
@@ -34,6 +27,9 @@ Vue.use(VuePreview,{
     fullscreenEl: false,
     shareEl: false,
 })
+//导入vuex数据对象
+import store from './data.js'
+
 //全局过滤器，必须定义在Vue对象生成之前，在多个Vue对象通用,过滤器调用采用就近原则
 Vue.filter('timeFormat', function (time, pattern) {
     return moment(time).format(pattern || 'YYYY-MM-DD HH:mm:ss')
@@ -83,4 +79,5 @@ new Vue({
     el: '#app',
     router,
     render: c => c(Main),
+    store,
 })

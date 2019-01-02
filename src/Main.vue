@@ -17,7 +17,7 @@
             </router-link>
             <router-link class="mui-tab-item" to="/shoppingCart" >
                 <span class="mui-icon mui-icon-extra mui-icon-extra-cart">
-                    <span class="mui-badge" id="shopping-badge">3</span>
+                    <span class="mui-badge" id="shopping-badge">{{$store.getters.getAllCount}}</span>
                 </span>
                 <span class="mui-tab-label">购物车</span>
             </router-link>
@@ -78,6 +78,9 @@ export default {
             .mui-title{
                 color: white;
             }
+        }
+        .mui-badge{
+
         }
     }
 </style>

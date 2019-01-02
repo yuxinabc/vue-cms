@@ -96,7 +96,13 @@
             },
             addToShopCar() {
                 this.isShow = !this.isShow
-                document.getElementById("shopping-badge").innerText=this.selectedNum
+                let commodity={
+                    id:this.$route.params.id,
+                    count:this.selectedNum,
+                    price:this.commodityInfo.sell_price,
+                    selected:true
+                }
+                this.$store.commit('addCommodityToCar',commodity)
             },
             goGraphicIntroduction() {
                 this.$router.push(`/home/commodityPurchase/commodityDetail/graphicIntroduction/${this.$route.params.id}`)
@@ -117,7 +123,6 @@
             doGetInfo() {
                 this.axios.get(`/goods/getinfo/${this.$route.params.id}`)
                     .then(response => {
-                        console.log(response.data.message)
                         this.commodityInfo = response.data.message[0]
                     })
             }
