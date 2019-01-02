@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
-     car:[]
+     car:JSON.parse(localStorage.getItem('car')||'[]')
     },
     mutations: {
       addCommodityToCar(state,commodity){
@@ -18,16 +18,15 @@ const store = new Vuex.Store({
           if(!flag){
               state.car.push(commodity)
           }
-
+       localStorage.setItem('car',JSON.stringify(state.car))
       },
     },
     getters:{
        getAllCount(state){
            let count=0
            state.car.forEach(item=>{
-               count+=item.count
+               count+=parseInt(item.count)
            })
-           alert(count)
            return count;
         }
     }
