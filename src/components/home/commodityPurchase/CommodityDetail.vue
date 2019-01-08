@@ -98,7 +98,7 @@
                 this.isShow = !this.isShow
                 let commodity={
                     id:this.$route.params.id,
-                    count:this.selectedNum,
+                    count:parseInt(this.selectedNum),
                     price:this.commodityInfo.sell_price,
                     selected:true
                 }
