@@ -108,7 +108,7 @@
                 this.$router.push(`/home/commodityPurchase/commodityDetail/graphicIntroduction/${this.$route.params.id}`)
             },
             goComment() {
-
+                this.$router.push(`/home/commodityPurchase/commodityDetail/CommodityComments/${this.$route.params.id}`)
             },
             doGetThumbnails() {
                 this.axios.get(`/getthumimages/${this.$route.params.id}`)

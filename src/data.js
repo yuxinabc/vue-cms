@@ -28,7 +28,14 @@ const store = new Vuex.Store({
                count+=parseInt(item.count)
            })
            return count;
-        }
+        },
+        getAllIds(state){
+           let ids=''
+            state.car.forEach(item=>{
+                ids+=item.id+','
+            })
+            return ids.substring(0,ids.length-1);
+        },
     }
 })
 export default store

@@ -11,6 +11,7 @@ import Search from './components/Search.vue'
 import CommodityList from './components/home/commodityPurchase/CommodityList.vue'
 import CommodityDetail from './components/home/commodityPurchase/CommodityDetail.vue'
 import GraphicIntroduction from './components/home/commodityPurchase/GraphicIntroduction.vue'
+import CommodityComments from './components/home/commodityPurchase/CommodityComments.vue'
 Vue.use(VueRouter)
 let router=new VueRouter({
     routes:[
@@ -23,6 +24,7 @@ let router=new VueRouter({
         {path:'/home/commodityPurchase',component:CommodityList,name:'商品列表'},
         {path:'/home/commodityPurchase/commodityDetail/:id',component:CommodityDetail,name:'商品详情'},
         {path:'/home/commodityPurchase/commodityDetail/graphicIntroduction/:id',component:GraphicIntroduction,name:'图文介绍'},
+        {path:'/home/commodityPurchase/commodityDetail/CommodityComments/:id',component:CommodityComments,name:'商品评论'},
         {path:'/member',component:Member,name:'会员'},
         {path:'/shoppingCart',component:ShoppingCart,name:'购物车'},
         {path:'/search',component:Search,name:'搜索'},

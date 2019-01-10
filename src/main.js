@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Main from './Main.vue'
 import router from './router.js'
+import './css/common.css'
 /*------导入mui相关开始---------*/
 import './libs/mui/css/mui.min.css'
 import './libs/mui/css/icons-extra.css'
@@ -8,6 +9,13 @@ import mui from './libs/mui/js/mui.min.js'
 
 Vue.prototype.mui = mui
 /*------导入mui相关结束---------*/
+/*----------导入element-ui开始-------------*/
+import 'element-ui/lib/theme-chalk/index.css'
+import { Switch,Row, Col, } from 'element-ui'
+Vue.component(Switch .name, Switch )
+Vue.component(Row.name, Row )
+Vue.component(Col.name, Col )
+/*----------导入element-ui结束-------------*/
 /*全局导入网络网络访问*/
 import './http/http.js'
 //导入时间处理插件
